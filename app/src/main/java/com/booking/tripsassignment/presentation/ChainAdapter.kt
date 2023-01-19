@@ -1,4 +1,4 @@
-package com.booking.tripsassignment
+package com.booking.tripsassignment.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.booking.tripsassignment.R
+import com.booking.tripsassignment.data.Chain
+import com.booking.tripsassignment.domain.usecase.GetCityNamesWithoutDuplicatesUseCase
 import com.booking.tripsassignment.utils.ImageLoader
 
 class ChainAdapter(private val chainList: List<Chain>): RecyclerView.Adapter<ChainAdapter.ChainViewHolder>() {
@@ -19,7 +22,7 @@ class ChainAdapter(private val chainList: List<Chain>): RecyclerView.Adapter<Cha
     override fun onBindViewHolder(holder: ChainViewHolder, position: Int) {
         val currentItem=chainList.get(position)
         ImageLoader.loadImage(holder.imageViewTrip,currentItem.trips.get(0).hotel.mainPhoto) // TODO fix image loading problem
-        holder.textViewCities.text="Trip to "+GetCityNamesWithoutDuplicatesUseCase().invoke(currentItem.trips)
+        holder.textViewCities.text="Trip to "+ GetCityNamesWithoutDuplicatesUseCase().invoke(currentItem.trips)
         holder.textViewDates.text=currentItem.trips.get(0).checkin.toString()+" - "+chainList.get(position).trips.get(chainList.size-1).checkout
         holder.textViewNights.text=currentItem.trips.size.toString()+" bookings"
     }

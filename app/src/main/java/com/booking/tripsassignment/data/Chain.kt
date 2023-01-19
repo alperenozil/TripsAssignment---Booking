@@ -1,4 +1,4 @@
-package com.booking.tripsassignment
+package com.booking.tripsassignment.data
 
 import com.booking.tripsassignment.data.Booking
 

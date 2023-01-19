@@ -1,9 +1,11 @@
-package com.booking.tripsassignment
+package com.booking.tripsassignment.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.booking.tripsassignment.R
+import com.booking.tripsassignment.domain.usecase.GetChainsUseCase
 import com.booking.tripsassignment.repository.MockNetworkBookingRepository
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.booking.tripsassignment
+package com.booking.tripsassignment.domain.usecase
 
 import com.booking.tripsassignment.data.Booking
 

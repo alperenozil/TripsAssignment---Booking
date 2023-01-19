@@ -1,6 +1,7 @@
-package com.booking.tripsassignment
+package com.booking.tripsassignment.domain.usecase
 
 import com.booking.tripsassignment.data.Booking
+import com.booking.tripsassignment.data.Chain
 import com.booking.tripsassignment.repository.MockNetworkBookingRepository
 
 class GetChainsUseCase(
@@ -35,10 +36,10 @@ class GetChainsUseCase(
         }
 
         return when(tripDate){
-            TripDate.PAST-> chainList.filter {
+            TripDate.PAST -> chainList.filter {
                 it.trips[chainList.size].checkout.year<2023
             }
-            TripDate.UPCOMING-> chainList.filter {
+            TripDate.UPCOMING -> chainList.filter {
                 it.trips[chainList.size].checkout.year>=2023
             }
         }

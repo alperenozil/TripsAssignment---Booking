@@ -1,7 +1,10 @@
-package com.booking.tripsassignment
+package com.booking.tripsassignment.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.booking.tripsassignment.data.Chain
+import com.booking.tripsassignment.domain.usecase.GetChainsUseCase
+import com.booking.tripsassignment.domain.usecase.TripDate
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
